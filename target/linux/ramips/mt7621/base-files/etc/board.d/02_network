@@ -23,6 +23,9 @@ ramips_setup_interfaces()
 	d-team,newifi-d2)
 		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3 lan4 ra0 rai0" "wan"
 		;;
+	qm,b1)
+	        ucidef_set_interfaces_lan_wan "lan" "wan"
+		;; 
 	gehua,ghl-r-001|\
 	hiwifi,hc5962|\
 	xiaomi,mir3p|\
