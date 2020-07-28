@@ -6,16 +6,23 @@
 / {
     compatible = "qm,b1", "mediatek,mt7621-soc";
     model = "QM B1";
-   	
+    
+    aliases {
+		led-boot = &led_sys;
+		led-failsafe = &led_sys;
+		led-running = &led_sys;
+		led-upgrade = &led_sys;
+	    };
+
     chosen {
         bootargs = "console=ttyS0,115200";
-    };
+          };
 
     leds {
         compatible = "gpio-leds";
 
-        led_status: internet {
-            label = "b1:green:internet";
+        led_sys {
+            label = "b1:green:sys";
             gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
 		};
 		
@@ -130,7 +137,7 @@
 			status = "okay";
 			label = "lan";
 			mtd-mac-address = <&factory 0x4>;
-      mtd-mac-address-increment = <2>;
+                        mtd-mac-address-increment = <2>;
 		      };
 	};
 };
