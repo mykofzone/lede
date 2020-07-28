@@ -21,9 +21,9 @@
     leds {
         compatible = "gpio-leds";
 
-        led_sys {
-            label = "b1:green:sys";
-            gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
+        led_sys: sys {
+			label = "b1:green:sys";
+			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
 		};
 		
         wifi2g {
