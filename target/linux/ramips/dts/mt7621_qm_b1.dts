@@ -14,9 +14,9 @@
     leds {
         compatible = "gpio-leds";
 
-        led_status: sys {
-            label = "b1:green:sys";
-            gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
+        led_status: lan {
+            label = "b1:green:lan";
+            gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
 		};
 		
         wifi2g {
@@ -29,9 +29,9 @@
 			gpios = <&gpio 13 GPIO_ACTIVE_LOW>;   
 		};
 		
-	internet {
+	wan {
 			label = "b1:green:wan";
-			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;   
+			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;   
 		};
 	
         
