@@ -57,6 +57,7 @@ mikrotik,routerboard-m11g)
 	ucidef_set_led_rssi "rssiveryhigh" "RSSIVERYHIGH" "$boardname:green:rssi4" "wlan0" "80" "100"
 	;;
 qm,b1)
+        ucidef_set_led_sys "sys" "SYS" "$boardname:green:sys" "SYS"
         ucidef_set_led_netdev "wan" "WAN" "$boardname:green:wan" "WAN"
 	ucidef_set_led_netdev "wifi2g" "Wifi 2.4G" "$boardname:green:wifi2G" "wlan0"
 	ucidef_set_led_netdev "wifi5g" "Wifi 5G" "$boardname:green:wifi5G" "wlan1"
