@@ -8,10 +8,10 @@
     model = "QM B1";
     
     aliases {
-		led-boot = &led_sys;
-		led-failsafe = &led_sys;
-		led-running = &led_sys;
-		led-upgrade = &led_sys;
+		led-boot = &led_status;
+		led-failsafe = &led_status;
+		led-running = &led_status;
+		led-upgrade = &led_status;
 	    };
 
     chosen {
@@ -21,8 +21,8 @@
     leds {
         compatible = "gpio-leds";
 
-        led_sys: sys {
-			label = "b1:green:sys";
+        led_status: status {
+			label = "b1:green:status";
 			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
 		};
 		
@@ -137,14 +137,14 @@
 			status = "okay";
 			label = "lan";
 			mtd-mac-address = <&factory 0x4>;
-                        mtd-mac-address-increment = <2>;
+                        mtd-mac-address-decrement = <1>;
 		      };
 	};
 };
 
 &state_default {
 	gpio {
-		groups = "wdt";
+		groups = "wdt","rgmii2";
 		function = "gpio";
 	};
 };
