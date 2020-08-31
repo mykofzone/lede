@@ -27,33 +27,7 @@
 			default-state = "on";
 		};
 
-		internet {
-			label = "tp-link:green:internet";
-			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
-		};
-
-		wlan2g {
-			label = "tp-link:green:wlan2g";
-			gpios = <&gpio 11 GPIO_ACTIVE_LOW>;
-			linux,default-trigger = "phy0tpt";
-		};
-
-		usb {
-			label = "tp-link:green:usb";
-			gpios = <&gpio 4 GPIO_ACTIVE_HIGH>;
-			trigger-sources = <&hub_port0>;
-			linux,default-trigger = "usbport";
-		};
-
-		wps {
-			label = "tp-link:green:wps";
-			gpios = <&gpio 0 GPIO_ACTIVE_LOW>;
-		};
-
-		lan {
-			label = "tp-link:green:lan";
-			gpios = <&gpio 15 GPIO_ACTIVE_HIGH>;
-		};
+		
 	};
 
 	keys {
@@ -62,39 +36,12 @@
 		reset {
 			label = "Reset button";
 			linux,code = <KEY_RESTART>;
-			gpios = <&gpio 3 GPIO_ACTIVE_LOW>;
-		};
-
-		wps {
-			label = "WPS button";
-			linux,code = <KEY_WPS_BUTTON>;
-			gpios = <&gpio 2 GPIO_ACTIVE_LOW>;
-		};
-
-		sw1 {
-			label = "Mode switch 1";
-			linux,input-type = <EV_SW>;
-			linux,code = <BTN_0>;
 			gpios = <&gpio 17 GPIO_ACTIVE_LOW>;
 		};
 
-		sw2 {
-			label = "Mode switch 2";
-			linux,input-type = <EV_SW>;
-			linux,code = <BTN_1>;
-			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
-		};
+		
 	};
-
-	gpio-export {
-		compatible = "gpio-export";
-
-		gpio_usb_power {
-			gpio-export,name = "tp-link:power:usb";
-			gpio-export,output = <1>;
-			gpios = <&gpio 1 GPIO_ACTIVE_HIGH>;
-		};
-	};
+	
 };
 
 &uart {
@@ -167,20 +114,5 @@
 	wifi@0,0 {
 		compatible = "pci168c,0050";
 		reg = <0x0000 0 0 0 0>;
-	};
-};
-
-&usb_phy {
-	status = "okay";
-};
-
-&usb0 {
-	#address-cells = <1>;
-	#size-cells = <0>;
-	status = "okay";
-
-	hub_port0: port@1 {
-		reg = <1>;
-		#trigger-source-cells = <0>;
 	};
 };
