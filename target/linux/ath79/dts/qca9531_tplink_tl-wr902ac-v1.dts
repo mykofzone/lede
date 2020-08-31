@@ -36,7 +36,7 @@
 		reset {
 			label = "Reset button";
 			linux,code = <KEY_RESTART>;
-			gpios = <&gpio 17 GPIO_ACTIVE_LOW>;
+			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
 		};
 
 		
@@ -88,24 +88,23 @@
 	};
 };
 
+&eth1 {
+	mtd-mac-address = <&art 0x8>;
+};
+
 &eth0 {
 	status = "okay";
-
 	phy-handle = <&swphy4>;
-
-	mtd-mac-address = <&tplink 0x8>;
+	mtd-mac-address = <&art 0x8>;
 	mtd-mac-address-increment = <1>;
-};
-
-&eth1 {
-	compatible = "syscon", "simple-mfd";
-};
+	};
 
 &wmac {
 	status = "okay";
 
 	mtd-cal-data = <&art 0x1000>;
-	mtd-mac-address = <&tplink 0x8>;
+	mtd-mac-address = <&art 0x8>;
+	mtd-mac-address-increment = <2>;
 };
 
 &pcie0 {
