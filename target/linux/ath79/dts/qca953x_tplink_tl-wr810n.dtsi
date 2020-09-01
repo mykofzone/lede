@@ -96,6 +96,11 @@
 	mtd-mac-address = <&uboot 0x1fc00>;
 };
 
-&pcie {
+&pcie0 {
 	status = "okay";
+
+	wifi@0,0 {
+		compatible = "pci168c,0050";
+		reg = <0x0000 0 0 0 0>;
+	};
 };
