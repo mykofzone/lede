@@ -466,7 +466,7 @@ TARGET_DEVICES += tl-wr710n-v2.1
 define Device/tl-wr810n-v1
   $(Device/tplink-8mlzma)
   DEVICE_TITLE := TP-LINK TL-WR810N v1
-  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca9886-ct
+  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca9888-ct
   BOARDNAME := TL-WR810N
   DEVICE_PROFILE := TLWR810
   TPLINK_HWID := 0x08100001
@@ -476,7 +476,7 @@ TARGET_DEVICES += tl-wr810n-v1
 define Device/tl-wr810n-v2
   $(Device/tplink-8mlzma)
   DEVICE_TITLE := TP-LINK TL-WR810N v2
-  DEVICE_PACKAGES := kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9886-ct
+  DEVICE_PACKAGES := kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9888-ct
   BOARDNAME := TL-WR810N-v2
   DEVICE_PROFILE := TLWR810
   TPLINK_HWID := 0x08100002
