@@ -176,10 +176,7 @@ ar71xx_setup_interfaces()
 	routerstation|\
 	tl-wr710n|\
 	tl-wr720n-v3|\
-	tl-wr810n）
-	        ucidef_add_switch "switch0" \
-			"0@eth0" "1:lan:1" "3:lan:2" "4:lan:3" "5:lan:4" "2:wan"
-		;;
+	tl-wr810n|\	       
 	tl-wr810n-v2|\
 	wpe72|\
 	wrtnode2q)
