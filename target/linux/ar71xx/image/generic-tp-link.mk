@@ -466,7 +466,7 @@ TARGET_DEVICES += tl-wr710n-v2.1
 define Device/tl-wr810n-v1
   $(Device/tplink-8mlzma)
   DEVICE_TITLE := TP-LINK TL-WR810N v1
-  DEVICE_PACKAGES := kmod-usb2
+  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca9886-ct
   BOARDNAME := TL-WR810N
   DEVICE_PROFILE := TLWR810
   TPLINK_HWID := 0x08100001
