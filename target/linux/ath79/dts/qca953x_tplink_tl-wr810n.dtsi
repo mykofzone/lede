@@ -96,6 +96,6 @@
 	mtd-mac-address = <&uboot 0x1fc00>;
 };
 
-&pcie0 {
+&pcie {
 	status = "okay";
 };
