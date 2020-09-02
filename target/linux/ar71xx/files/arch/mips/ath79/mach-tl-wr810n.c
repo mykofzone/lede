@@ -101,8 +101,6 @@ static void __init tl_ap143_setup(int lan_mac_offset)
 
 	ath79_register_mdio(0, 0x0);
 	
-	ath79_register_pci();
-
 	/* WAN */
 	ath79_eth0_data.phy_if_mode = PHY_INTERFACE_MODE_MII;
 	ath79_eth0_data.duplex = DUPLEX_FULL;
@@ -134,11 +132,8 @@ static void __init tl_ap143_setup(int lan_mac_offset)
 static void __init tl_wr810n_setup(void)
 {
 	tl_ap143_setup(-1);
+	ath79_register_pci();
 
-	gpio_request_one(TL_WR810N_GPIO_USB_POWER,
-			 GPIOF_OUT_INIT_HIGH | GPIOF_EXPORT_DIR_FIXED,
-			 "USB power");
-	ath79_register_usb();
 }
 
 static void __init tl_wr810n_v2_setup(void)
