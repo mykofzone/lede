@@ -57,7 +57,7 @@ static struct flash_platform_data tl_wr810n_flash_data = {
 
 static struct gpio_led tl_wr810n_leds_gpio[] __initdata = {
 	{
-		.name		= "tp-link:blue:system",
+		.name		= "tp-link:white:system",
 		.gpio		= TL_WR810N_GPIO_LED_SYSTEM,
 		.active_low	= 1,
 	},
